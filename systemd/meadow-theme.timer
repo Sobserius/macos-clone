@@ -1,0 +1,11 @@
+[Unit]
+Description=Check the Meadow theme schedule
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=10min
+AccuracySec=30s
+Persistent=false
+
+[Install]
+WantedBy=timers.target

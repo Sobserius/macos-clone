@@ -1,0 +1,53 @@
+#!/bin/sh
+# Start AwesomeWM from a display manager / startx with a persistent log.
+#
+# If the X server or the GPU hangs, this file survives the reboot and shows
+# exactly how far startup got:
+#   ~/.cache/meadow/session.log       current run
+#   ~/.cache/meadow/session.log.old   previous run
+#
+# Useful environment switches:
+#   MEADOW_NO_PICOM=1   start without the compositor (diagnose GPU hangs)
+#   MEADOW_MINIMAL=1    use the minimal diagnostic config
+
+set -u
+
+LOG_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/meadow"
+LOG="$LOG_DIR/session.log"
+mkdir -p "$LOG_DIR" 2>/dev/null || true
+
+if [ -f "$LOG" ]; then
+    mv -f "$LOG" "$LOG.old"
+fi
+
+# Everything below (including awesome's own stderr) goes to the log.
+exec >>"$LOG" 2>&1
+
+echo "=== $(date '+%Y-%m-%d %H:%M:%S') awesome-session ==="
+echo "kernel:  $(uname -r)"
+echo "display: ${DISPLAY:-unset}  xauth: ${XAUTHORITY:-unset}"
+echo "user:    ${USER:-?}"
+
+if [ "${MEADOW_MINIMAL:-0}" = "1" ]; then
+    echo "mode:    minimal"
+    exec awesome -c "$HOME/dotfiles/awesome/rc-minimal.lua"
+fi
+
+if [ "${MEADOW_MODE:-normal}" = "stock" ]; then
+    echo "mode:    stock (default upstream config)"
+    exec awesome -c /etc/xdg/awesome/rc.lua
+fi
+
+# Optional per-machine session switches, e.g.
+#   echo 'MEADOW_NO_PICOM=0' > ~/.config/meadow/session-env
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/meadow/session-env" ] &&
+    . "${XDG_CONFIG_HOME:-$HOME/.config}/meadow/session-env"
+
+# First successful boot: start without picom. Flip to 0 once the session is
+# confirmed stable (picom uses xrender, so it no longer touches the GPU).
+: "${MEADOW_NO_PICOM:=1}"
+export MEADOW_NO_PICOM
+echo "picom:   ${MEADOW_NO_PICOM} (1 = off, 0 = on)"
+
+echo "mode:    normal"
+exec awesome

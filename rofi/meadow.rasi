@@ -1,0 +1,76 @@
+/* Meadow (dark) */
+* {
+    bg: #1f1a24F2;
+    bg-alt: #2a2431;
+    fg: #ebe7f0;
+    muted: #958aa3;
+    accent: #c1b0e7;
+    accent-fg: #1f1a24;
+    urgent: #d68583;
+
+    background-color: @bg;
+    text-color: @fg;
+    font: "Inter 11";
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 40%;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 12px;
+    padding: 12px;
+    background-color: @bg;
+}
+
+mainbox {
+    spacing: 10px;
+    padding: 4px;
+}
+
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 8px;
+    padding: 8px 12px;
+    spacing: 8px;
+    children: [prompt, entry];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    placeholder: "Search";
+    placeholder-color: @muted;
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;
+    spacing: 4px;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    padding: 8px 10px;
+    border-radius: 8px;
+    spacing: 10px;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @accent-fg;
+}
+
+element-icon {
+    size: 18px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}

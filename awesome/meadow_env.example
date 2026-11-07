@@ -1,0 +1,3 @@
+# Meadow weather API key (not committed)
+# Get a free key at https://home.openweathermap.org/api_keys
+export API_KEY="your_api_key_here"

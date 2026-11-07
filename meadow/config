@@ -1,0 +1,9 @@
+# Meadow theme schedule (24h clock), used by `switch-theme auto`.
+# Sourced as a shell file, so keep the NAME=value format.
+LIGHT_FROM=07:00
+DARK_FROM=19:00
+
+# Optional: follow real sunrise/sunset at your location.
+# Uncomment and set your coordinates (requires python3).
+# LAT=52.5200
+# LON=13.4050

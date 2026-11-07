@@ -1,0 +1,13 @@
+# Generated / local state
+fish/fish_variables
+fish/conf.d/90-meadow-theme.fish
+ghostty/theme.conf
+awesome/meadow_env
+awesome/sketchybar_env
+
+# Python / editor / OS noise
+__pycache__/
+*.pyc
+.DS_Store
+*~
+*.bak

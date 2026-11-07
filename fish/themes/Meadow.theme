@@ -1,0 +1,73 @@
+# name: 'Meadow'
+
+[light]
+# preferred_background: f7e8ee
+fish_color_normal 382a3d
+fish_color_command 4a68a0
+fish_color_keyword 715c97
+fish_color_quote 507357
+fish_color_redirection 5f4e63
+fish_color_end 5f4e63
+fish_color_error b9454c
+fish_color_param 382a3d
+fish_color_option 4c8b98
+fish_color_comment 857284 --italics
+fish_color_selection --background=e0d7f4
+fish_color_operator 5f4e63
+fish_color_escape c57b3d
+fish_color_autosuggestion 857284
+fish_color_valid_path --underline
+fish_color_cwd 4a68a0
+fish_color_cwd_root b9454c
+fish_color_user 382a3d
+fish_color_host 217584
+fish_color_host_remote b76316
+fish_color_status b9454c
+fish_color_cancel --reverse
+fish_color_search_match --background=f6dac2
+fish_color_history_current 715c97
+fish_pager_color_progress 857284
+fish_pager_color_background
+fish_pager_color_prefix 715c97
+fish_pager_color_completion 382a3d
+fish_pager_color_description 857284
+fish_pager_color_selected_background --background=e1ced7
+fish_pager_color_selected_prefix 715c97
+fish_pager_color_selected_completion 382a3d
+fish_pager_color_selected_description 5f4e63
+
+[dark]
+# preferred_background: 1f1a24
+fish_color_normal ebe7f0
+fish_color_command 9cb8eb
+fish_color_keyword c1b0e7
+fish_color_quote a4bba9
+fish_color_redirection b9b0c6
+fish_color_end b9b0c6
+fish_color_error d68583
+fish_color_param ebe7f0
+fish_color_option 6ca6b2
+fish_color_comment 958aa3 --italics
+fish_color_selection --background=4c4161
+fish_color_operator b9b0c6
+fish_color_escape c49365
+fish_color_autosuggestion 958aa3
+fish_color_valid_path --underline
+fish_color_cwd 9cb8eb
+fish_color_cwd_root d68583
+fish_color_user ebe7f0
+fish_color_host 84c7d5
+fish_color_host_remote e9b17c
+fish_color_status d68583
+fish_color_cancel --reverse
+fish_color_search_match --background=5d4127
+fish_color_history_current c1b0e7
+fish_pager_color_progress 958aa3
+fish_pager_color_background
+fish_pager_color_prefix c1b0e7
+fish_pager_color_completion ebe7f0
+fish_pager_color_description 958aa3
+fish_pager_color_selected_background --background=3a3245
+fish_pager_color_selected_prefix c1b0e7
+fish_pager_color_selected_completion ebe7f0
+fish_pager_color_selected_description b9b0c6

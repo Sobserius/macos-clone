@@ -1,0 +1,12 @@
+@theme "meadow.rasi"
+
+configuration {
+    modi: "drun,run,window";
+    font: "Inter 11";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "  apps";
+    display-run: "  run";
+    display-window: "  windows";
+    drun-display-format: "{name}";
+}

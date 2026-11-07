@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Awesome (Meadow)
+Comment=Meadow rice — AwesomeWM
+TryExec=awesome
+Exec=@HOME@/.local/bin/awesome-session
+Type=XSession

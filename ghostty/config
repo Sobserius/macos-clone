@@ -1,0 +1,24 @@
+# Meadow — Ghostty
+# The pair is used when the desktop portal reports light/dark; theme.conf
+# (written by switch-theme.sh) makes explicit switches deterministic.
+theme = light:Meadow Light,dark:Meadow
+config-file = ?~/.config/ghostty/theme.conf
+
+background-opacity = 0.9
+background-blur = true
+
+window-padding-x = 10
+window-padding-y = 10
+
+-- Fonts come from distro packages: JetBrains Mono + Symbols Nerd Font
+-- (fallback for the bar/status glyphs) and Inter for the UI.
+font-family = JetBrains Mono
+font-family = Symbols Nerd Font Mono
+font-size = 12
+
+# Tiling friendly: no client-side decorations
+window-decoration = false
+
+cursor-style = block
+copy-on-select = clipboard
+confirm-close-surface = false

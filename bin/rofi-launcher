@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Open rofi with the Meadow theme that matches the current light/dark state.
+set -euo pipefail
+
+STATE="${XDG_CONFIG_HOME:-$HOME/.config}/meadow/state"
+MODE="$(cat "$STATE" 2>/dev/null || echo dark)"
+THEME="$HOME/.config/rofi/meadow.rasi"
+[ "$MODE" = "light" ] && THEME="$HOME/.config/rofi/meadow-light.rasi"
+
+exec rofi -theme "$THEME" -show "${1:-drun}" -show-icons
